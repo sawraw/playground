@@ -37,7 +37,7 @@ app.use(require('./passport.middleware'));
 //Routing should come after all middleware
 app.use('/api', require('../api/api.router'));
 
-var validFrontendRoutes = ['/', '/stories', '/users', '/stories/:id', '/users/:id', '/signup', '/login'];
+var validFrontendRoutes = ['/', '/stories', '/users', '/stories/:id', '/users/:id', '/signup', '/login', '/styleguides'];
 var indexPath = path.join(__dirname, '..', '..', 'browser', 'index.html');
 validFrontendRoutes.forEach(function (stateRoute) {
   app.get(stateRoute, function (req, res) {

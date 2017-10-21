@@ -9,7 +9,9 @@ import UserList from './components/User/UserList';
 import UserDetail from './components/User/UserDetail';
 import StoryList from './components/Story/StoryList';
 import StoryDetail from './components/Story/StoryDetail';
+import Styleguide from './components/Styleguide';
 import { fetchUsers } from './redux/users';
+import { fetchStyleguides } from './redux/styleguides';
 import { fetchStories, fetchStory } from './redux/stories';
 import { retrieveLoggedInUser } from './redux/auth';
 
@@ -25,6 +27,8 @@ const Routes = ({ fetchInitialData, onStoryEnter }) => (
       <Route path="users/:id" component={UserDetail} />
       <Route path="stories" component={StoryList} />
       <Route path="stories/:id" component={StoryDetail} onEnter={onStoryEnter} />
+      <Route path="styleguides" component={Styleguide} />
+
       <Route path="*" component={Home} />
     </Route>
   </Router>
@@ -39,6 +43,7 @@ const mapDispatch = dispatch => ({
     dispatch(retrieveLoggedInUser());
     dispatch(fetchUsers());
     dispatch(fetchStories());
+    dispatch(fetchStyleguides());
   },
   onStoryEnter: (nextRouterState) => {
     const storyId = nextRouterState.params.id;
