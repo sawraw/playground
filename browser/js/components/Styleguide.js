@@ -16,13 +16,18 @@ class Styleguide extends Component {
     let name;
     styleguides.length ? name = styleguides[0].name : name = "no styleguides";
     return (
-      <div>
-      <h2>{name}</h2>
+      <div><h1 style = {{'margin-bottom':'50px'}}>Styleguides</h1>
         {
           styleguides && styleguides.map(styleguide => { 
-            return(<h1>
-            {styleguide.name}
-            </h1> );
+            return(<div key = {styleguide.id}> 
+              <h4>{styleguide.name}</h4>
+              <ul>
+              <li>backdrop color is: {styleguide.backdrop}</li>
+              <li>captions style is: {styleguide.captions}</li>
+              <li style = {{'margin-bottom':'30px'}}>titles style is: {styleguide.titles}</li>
+              </ul>
+            </div> 
+          );
             })
         }
 
