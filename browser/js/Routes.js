@@ -1,15 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import Root from './components/Root';
-import Home from './components/Home';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import UserList from './components/User/UserList';
-import UserDetail from './components/User/UserDetail';
-import StoryList from './components/Story/StoryList';
-import StoryDetail from './components/Story/StoryDetail';
-import Styleguide from './components/Styleguide';
+import Root from './react/Root';
+import Home from './react/Home';
+import Login from './react/Login';
+import Signup from './react/Signup';
+import UserList from './react/User/UserList';
+import UserDetail from './react/User/UserDetail';
+import StoryList from './react/Story/StoryList';
+import StoryDetail from './react/Story/StoryDetail';
+import Styleguide from './react/Styleguide';
+
 import { fetchUsers } from './redux/users';
 import { fetchStyleguides } from './redux/styleguides';
 import { fetchStories, fetchStory } from './redux/stories';

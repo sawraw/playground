@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import { connect } from 'react-redux';
+import AddStyleguide from './Components/AddStyleguide';
 
 
 /* -----------------    COMPONENT     ------------------ */
@@ -16,7 +17,9 @@ class Styleguide extends Component {
     let name;
     styleguides.length ? name = styleguides[0].name : name = "no styleguides";
     return (
-      <div><h1 style = {{'margin-bottom':'50px'}}>Styleguides</h1>
+      <div>
+        <AddStyleguide />
+        <h1 style = {{'marginBottom':'50px'}}>Styleguides</h1>
         {
           styleguides && styleguides.map(styleguide => { 
             return(<div key = {styleguide.id}> 
@@ -24,7 +27,7 @@ class Styleguide extends Component {
               <ul>
               <li>backdrop color is: {styleguide.backdrop}</li>
               <li>captions style is: {styleguide.captions}</li>
-              <li style = {{'margin-bottom':'30px'}}>titles style is: {styleguide.titles}</li>
+              <li style = {{'marginBottom':'30px'}}>titles style is: {styleguide.titles}</li>
               </ul>
             </div> 
           );
