@@ -9,7 +9,8 @@ import UserList from './react/User/UserList';
 import UserDetail from './react/User/UserDetail';
 import StoryList from './react/Story/StoryList';
 import StoryDetail from './react/Story/StoryDetail';
-import Styleguide from './react/Styleguide';
+// import Styleguide from './react/Styleguide';
+import Dashboard from './react/Containers/Dashboard';
 
 import { fetchUsers } from './redux/users';
 import { fetchStyleguides } from './redux/styleguides';
@@ -28,7 +29,7 @@ const Routes = ({ fetchInitialData, onStoryEnter }) => (
       <Route path="users/:id" component={UserDetail} />
       <Route path="stories" component={StoryList} />
       <Route path="stories/:id" component={StoryDetail} onEnter={onStoryEnter} />
-      <Route path="styleguides" component={Styleguide} />
+      <Route path="dashboard" component={Dashboard} />
 
       <Route path="*" component={Home} />
     </Route>

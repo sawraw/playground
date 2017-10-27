@@ -18,9 +18,8 @@ class AddStyleguide extends React.Component {
   }
 
   handleChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
+    const value = event.target.value;
+    const name = event.target.name;
 
     this.setState({
       [name]: value
@@ -28,7 +27,6 @@ class AddStyleguide extends React.Component {
 }
 
   handleSubmit(event) {
-    console.log(this.state, "is the state")
     event.preventDefault();    
     let newStyleguide = {name:this.state.name, backdrop:this.state.backdrop, captions:this.state.captions, titles:this.state.titles};
     this.props.addStyleguide(newStyleguide);    
@@ -64,7 +62,6 @@ class AddStyleguide extends React.Component {
 }
 
 /* -----------------    CONTAINER     ------------------ */
-const mapState = () => ({ });
 
 const mapDispatch = (dispatch) => {
   return {
@@ -74,4 +71,4 @@ const mapDispatch = (dispatch) => {
   };
 };
 
-export default connect(mapState, mapDispatch)(AddStyleguide);
+export default connect(null, mapDispatch)(AddStyleguide);
