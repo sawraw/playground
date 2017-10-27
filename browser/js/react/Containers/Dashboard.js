@@ -1,35 +1,28 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router';
-import { connect } from 'react-redux';
-import AddStyleguide from '../Components/AddStyleguide';
-import Styleguides from '../Components/Styleguides';
-
+import React, { Component } from "react";
+import { Link } from "react-router";
+import { connect } from "react-redux";
+import { Grid } from "react-bootstrap";
+import Styleguides from "../Components/Styleguides";
 
 /* -----------------    COMPONENT     ------------------ */
 
-class Styleguide extends Component {
+class Dashboard extends Component {
   constructor(props) {
     super(props);
+
   }
-  
+
 
   render() {
-  
     return (
-      <div>
+      <Grid>
         <Styleguides />
-        <AddStyleguide />
-    
 
-
-      </div>
+      </Grid>
     );
   }
-
 }
 
 /* -----------------    CONTAINER     ------------------ */
 
-
-export default connect(null)(Styleguide);
-
+export default connect(null)(Dashboard);
